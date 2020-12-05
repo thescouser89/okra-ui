@@ -64,7 +64,7 @@ const routes: AppRouteConfig[] = [
     exact: true,
     label: 'Dashboard',
     path: '/',
-    title: 'PatternFly Seed | Main Dashboard',
+    title: 'Okra | Main Dashboard',
   },
   {
     component: Support,
