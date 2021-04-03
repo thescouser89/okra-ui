@@ -1,103 +1,88 @@
-# Patternfly Seed
+# dcheung notes
 
-Patternfly Seed is an open source build scaffolding utility for web apps. The primary purpose of this project is to give developers a jump start when creating new projects that will use patternfly. A secondary purpose of this project is to serve as a reference for how to configure various aspects of an application that uses patternfly, webpack, react, typescript, etc.
+Installed:
 
-Out of the box you'll get an app layout with chrome (header/sidebar), routing, build pipeline, test suite, and some code quality tools. Basically, all the essentials.
+- material-ui
+- fontsource-roboto (do i need it?)
+- react-router-dom for url routing
+- eslint to find common js errors
+- prettier for code formatting
+  to format: `npx prettier --write .`
+- eslint-config-prettier to make sure both interact nicely with each other
+  * needed to add prettier in the .eslintrc
 
-<img width="1058" alt="Out of box dashboard view of patternfly seed" src="https://user-images.githubusercontent.com/5942899/82119580-b4cf9380-974d-11ea-9f13-fa10471c5c73.png">
+Project from create-react-app
 
-## Quick-start
+Pretty graphs maybe from:
+-recharts
 
-```bash
-git clone https://github.com/patternfly/patternfly-react-seed
-cd patternfly-react-seed 
-npm install && npm run start:dev 
-```
-## Development Scripts
-```sh
-# Install development/build dependencies
-npm install
+# Getting Started with Create React App
 
-# Start the development server
-npm run start:dev
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# Run a production build (outputs to "dist" dir)
-npm run build
+## Available Scripts
 
-# Run the test suite
-npm run test
+In the project directory, you can run:
 
-# Run the linter
-npm run lint
+### `npm start`
 
-# Run the code formatter
-npm run format
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-# Launch a tool to inspect the bundle size
-npm run bundle-profile:analyze
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-# Start the express server (run a production build first)
-npm run start
+### `npm test`
 
-# Start storybook component explorer
-npm run storybook
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-# Build storybook component explorer as standalone app (outputs to "storybook-static" dir)
-npm run build:storybook
-```
+### `npm run build`
 
-## Configurations
-* [TypeScript Config](./tsconfig.json)
-* [Webpack Config](./webpack.common.js)
-* [Jest Config](./jest.config.js)
-* [Editor Config](./.editorconfig)
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## Raster Image Support
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-To use an image asset that's shipped with PatternFly core, you'll prefix the paths with "@assets". `@assets` is an alias for the PatternFly assets directory in node_modules.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-For example:
-```js
-import imgSrc from '@assets/images/g_sizing.png';
-<img src={imgSrc} alt="Some image" />
-```
+### `npm run eject`
 
-You can use a similar technique to import assets from your local app, just prefix the paths with "@app". `@app` is an alias for the main src/app directory.
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-```js
-import loader from '@app/assets/images/loader.gif';
-<img src={loader} alt="Content loading />
-```
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-## Vector Image Support
-Inlining SVG in the app's markup is also possible.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-```js
-import logo from '@app/assets/images/logo.svg';
-<span dangerouslySetInnerHTML={{__html: logo}} />
-```
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-You can also use SVG when applying background images with CSS. To do this, your SVG's must live under a `bgimages` directory (this directory name is configurable in [webpack.common.js](./webpack.common.js#L5)). This is necessary because you may need to use SVG's in several other context (inline images, fonts, icons, etc.) and so we need to be able to differentiate between these usages so the appropriate loader is invoked.
-```css
-body {
-  background: url(./assets/bgimages/img_avatar.svg);
-}
-```
+## Learn More
 
-## Code Quality Tools
-* For accessibility compliance, we use [react-axe](https://github.com/dequelabs/react-axe)
-* To keep our bundle size in check, we use [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer)
-* To keep our code formatting in check, we use [prettier](https://github.com/prettier/prettier)
-* To keep our code logic and test coverage in check, we use [jest](https://github.com/facebook/jest)
-* To ensure code styles remain consistent, we use [eslint](https://eslint.org/)
-* To provide a place to showcase custom components, we integrate with [storybook](https://storybook.js.org/)
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## Multi environment configuration
-This project uses [dotenv-webpack](https://www.npmjs.com/package/dotenv-webpack) for exposing environment variables to your code. Either export them at the system level like `export MY_ENV_VAR=http://dev.myendpoint.com && npm run start:dev` or simply drop a `.env` file in the root that contains your key-value pairs like below:
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-```sh
-ENV_1=http://1.myendpoint.com
-ENV_2=http://2.myendpoint.com
-```
+### Code Splitting
 
-With that in place, you can use the values in your code like `console.log(process.env.ENV_1);`
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
