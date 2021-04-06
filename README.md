@@ -9,7 +9,7 @@ Installed:
 - prettier for code formatting
   to format: `npx prettier --write .`
 - eslint-config-prettier to make sure both interact nicely with each other
-  * needed to add prettier in the .eslintrc
+  - needed to add prettier in the .eslintrc
 
 Project from create-react-app
 
