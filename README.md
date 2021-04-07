@@ -10,6 +10,32 @@ Installed:
   to format: `npx prettier --write .`
 - eslint-config-prettier to make sure both interact nicely with each other
   - needed to add prettier in the .eslintrc
+- eslint-plugin-import + config on .eslintrc to support react absolute import
+
+```
+module.exports = {
+  ...
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"]
+      }
+    },
+  },
+}
+```
+
+- File jsconfig.json is here to setup react absolute import. Instead of using:
+
+```
+import "../../okr/OKR";
+```
+
+you can just use:
+
+```
+import "okr/OKR";
+```
 
 Project from create-react-app
 
