@@ -6,6 +6,7 @@ Installed:
 - fontsource-roboto (do i need it?)
 - react-router-dom for url routing
 - eslint to find common js errors
+- keycloak-js and @react-keycloak/web. You've got to use a keycloak-js version that matches with your keycloak server. We're using 10.0.2 as a result instead of the latest.
 - prettier for code formatting
   to format: `npx prettier --write .`
 - eslint-config-prettier to make sure both interact nicely with each other
