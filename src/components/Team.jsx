@@ -3,11 +3,12 @@ import "App.css";
 import Box from "@material-ui/core/Box";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
+import Skeleton from "react-loading-skeleton";
 
 export default function Team() {
   const { id } = useParams();
-  const [data, setData] = useState({ id: 1 });
-  const [quarters, setQuarters] = useState([{ id: 1 }]);
+  const [data, setData] = useState(null);
+  const [quarters, setQuarters] = useState(null);
 
   useEffect(() => {
     const apiUrl = `http://localhost:8080/v1/team/${id}`;
@@ -23,21 +24,31 @@ export default function Team() {
 
   return (
     <Box>
-      <p>Id: {data.id}</p>
-      <p>Name: {data.name}</p>
-      <p>Description {data.description}</p>
+      {data ? (
+        <div>
+          <p>Id: {data.id}</p>
+          <p>Name: {data.name}</p>
+          <p>Description {data.description}</p>
+        </div>
+      ) : (
+        <Skeleton count={3} />
+      )}
 
       <h1>Quarters</h1>
       <ul>
-        {quarters.map((quarter) => (
-          <div>
-            <li>
-              <Link to={`/quarter/${quarter.id}`}>
-                {quarter.id}: {quarter.name}
-              </Link>
-            </li>
-          </div>
-        ))}
+        {quarters ? (
+          quarters.map((quarter) => (
+            <div>
+              <li>
+                <Link to={`/quarter/${quarter.id}`}>
+                  {quarter.id}: {quarter.name}
+                </Link>
+              </li>
+            </div>
+          ))
+        ) : (
+          <Skeleton count={5} />
+        )}
       </ul>
     </Box>
   );

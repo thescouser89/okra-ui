@@ -12,6 +12,7 @@ Installed:
 - eslint-config-prettier to make sure both interact nicely with each other
   - needed to add prettier in the .eslintrc
 - eslint-plugin-import + config on .eslintrc to support react absolute import
+- react-loading-skeleton for loading page when data is being loaded
 
 ```
 module.exports = {
